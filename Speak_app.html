@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeakApp</title>
+    <link rel="stylesheet" href="Speak_app_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="page-transition"></div>
+
+    <header class="header">
+        <h1>#AP</h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="Index.html">home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="social.html">social</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero full-screen">
+        <h1 class="title">SpeakApp</h1>
+        <div class="arrow-container">
+            <p class="scroll-text">scroll down</p>
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <section class="content">
+        <img src="multimedia/speak_app_01.jpg" alt="Hero Image" class="speak-app-1">
+
+        <div class="text-section">
+            <div class="text" data-aos="fade-up">
+                <p>SpeakApp is an innovative platform that empowers individuals to report violence or identify safe spaces in their area.</p>
+                <p>Its intuitive design encourages community support and awareness.</p>
+                <p>The name SpeakApp reflects our mission to break the silence and give everyone a voice, fostering a safer, more connected society.</p>
+            </div>
+        </div>
+
+        <div class="image-row">
+            <img src="multimedia/speak_app_02.png" alt="Image 1" class="half-width-image">
+            <img src="multimedia/Walking.gif" alt="Image 2" class="half-width-image">
+        </div>
+
+        <img src="multimedia/mappa_speakapp.png" alt="Wide Image" class="full-width-image">
+
+        <div class="image-row">
+            <img src="multimedia/Iphone_animation.gif" alt="Image 3" class="half-width-image">
+            <img src="multimedia/speak_app_03.png" alt="Image 4" class="half-width-image">
+        </div>
+
+        <div class="video-section">
+            <video controls poster="multimedia/copertina_video_speakapp.png" width="100%">
+                <source src="multimedia/Video_UX_Presentazione.mp4" type="video/mp4">
+                
+            </video>
+        </div>
+    </section>
+
+    <script>
+      document.querySelectorAll('a:not([target="_blank"])').forEach(link => {
+        link.addEventListener('click', event => {
+          const href = link.getAttribute('href');
+          
+          if (href && href !== '#' && !href.startsWith('javascript')) {
+            event.preventDefault();
+
+            const transitionElement = document.getElementById('page-transition');
+            transitionElement.classList.add('active');
+
+            setTimeout(() => {
+              window.location.href = href;
+            }, 800);
+          }
+        });
+      });
+
+      window.addEventListener('load', () => {
+        const transitionElement = document.getElementById('page-transition');
+        transitionElement.classList.add('slideOut');
+        
+        setTimeout(() => {
+          transitionElement.classList.remove('slideOut');
+        }, 800); 
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1000, 
+        easing: 'ease', 
+        once: true,
+        offset: 200 
+      });
+    </script>
+
+</body>
+</html>
+

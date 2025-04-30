@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="social-style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="page-transition"></div>
+
+    <header class="header">
+        <h1>#AP</h1>
+        <nav class="menu-home">
+            <ul>
+                <li><a href="Index.html">home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="work.html">work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="social-section">
+        <div class="card left">
+            <h2>Keep in Contact</h2>
+            <div class="social-links">
+                <a href="https://www.instagram.com/alepagliara/" class="icon instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/alessandro-pagliara-/" class="icon linkedin" target="_blank" rel="noopener noreferrer">Linkedin</a>
+                <a href="https://www.behance.net/pagliaraal1d09" class="icon behance" target="_blank" rel="noopener noreferrer">Behance</a>
+            </div>
+            <h3>+39 3668743989</h3>
+        </div>
+        <div class="card right">
+            <h2>Send a Message</h2>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="location-section">
+        <h2>Where to Find Me</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2182.004161992815!2d9.1104958!3d39.2657078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c3c0a800000001%3A0x3ca1f1ec5a8a778a!2sSu%20Planu%2C%20Selargius%2C%20Cagliari!5e0!3m2!1sen!2sit!4v1674255566692!5m2!1sen!2sit" 
+                width="100%" height="400" 
+                style="border:0;" 
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <script>
+    document.querySelectorAll('a:not([target="_blank"])').forEach(link => {
+        link.addEventListener('click', event => {
+            const href = link.getAttribute('href');
+
+            if (href && href !== '#' && !href.startsWith('javascript')) {
+                event.preventDefault();
+                const transitionElement = document.getElementById('page-transition');
+                transitionElement.classList.add('active');
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 800);
+            }
+        });
+    });
+
+    window.addEventListener('load', () => {
+        const transitionElement = document.getElementById('page-transition');
+        transitionElement.classList.add('slideOut');
+
+        setTimeout(() => {
+            transitionElement.classList.remove('slideOut');
+        }, 800);
+    });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+    AOS.init({
+        duration: 1000, 
+        easing: 'ease', 
+        once: true  
+    });
+    </script>
+
+</body>
+</html>

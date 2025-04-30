@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Works</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="work-style.css">
+</head>
+<body>
+
+  <div id="page-transition"></div>
+
+  <header class="header">
+    <h1>#AP</h1>
+    <nav class="menu">
+      <ul>
+        <li><a href="Index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="social.html">social</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="my-works">
+    <h2>My Works</h2>
+    <div class="cards-container">
+      <div class="card">
+        <a href="dad.html">
+          <img src="multimedia/dad.png" alt="DAD - Architecture and Design Department Branding">
+          <div class="card-overlay">
+            <p class="small-text">Architecture and Design Department</p>
+            <p>DAD</p>
+            <p class="small-text">Branding</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="Speak_app.html">
+          <img src="multimedia/speak_app_01.jpg" alt="SpeakApp - UX/UI Design">
+          <div class="card-overlay">
+            <p class="small-text">SpeakApp</p>
+            <p>SpeakApp</p>
+            <p class="small-text">UX-UI Design</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="cri.html">
+          <img src="multimedia/Mockup_treposter_cri.jpg" alt="Croce Rossa Italiana - Communication Campaign">
+          <div class="card-overlay">
+            <p class="small-text">Croce Rossa Italiana</p>
+            <p>Sei già a metà strada</p>
+            <p class="small-text">Communication campaign</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', event => {
+        const href = link.getAttribute('href');
+
+        if (href && href !== '#' && !href.startsWith('javascript')) {
+          event.preventDefault();
+
+          const transitionElement = document.getElementById('page-transition');
+          transitionElement.classList.add('active');
+
+          setTimeout(() => {
+            window.location.href = href;
+          }, 800);
+        }
+      });
+    });
+
+    window.addEventListener('load', () => {
+      const transitionElement = document.getElementById('page-transition');
+      transitionElement.classList.add('slideOut');
+
+      setTimeout(() => {
+        transitionElement.classList.remove('slideOut');
+      }, 800);
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      AOS.init({
+        duration: 1000,
+        easing: 'ease',
+        once: true
+      });
+    });
+  </script>
+
+</body>
+</html>
+
