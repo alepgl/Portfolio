@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Alessandro Pagliara - About</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style-about.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="page-transition"></div>
+
+  <header class="header">
+    <h1>#AP</h1>
+    <nav class="menu-home">
+      <ul>
+        <li><a href="Index.html">home</a></li>
+        <li><a href="work.html">work</a></li>
+        <li><a href="social.html">social</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="view">
+    <div class="grid">
+      <div class="col-50">
+        <h2>About me.</h2>
+        <p>I was born in Cagliari, Sardinia, a beautiful island that has shaped who I am today.</p>
+        <p>Currently, I am pursuing a degree in Design and Communication at Politecnico di Torino, where I am honing my skills and exploring new creative horizons.</p>
+        <p>If I had to choose three words to describe myself, they would be enthusiasm, persistence, and confidence — qualities that drive me in everything I do.</p>
+        <p>My primary goal is to authentically express myself through my work, ensuring that each project reflects my passion and creativity.</p>
+      </div>
+      <div class="col-50">
+        <img src="multimedia/2.svg" alt="sardegna" class="img-res">
+      </div>
+    </div>
+  </div>
+
+  <div class="text" data-aos="fade-up">
+    <div class="services">
+      <div class="services-title">
+        <h2>Services</h2>
+        <p>Over the years, I have specialized in:</p>
+      </div>
+      <div class="services-list">
+        <ul>
+          <li>Art Direction</li>
+          <li>Branding</li>
+          <li>Graphic Design</li>
+          <li>2D-3D Animation</li>
+          <li>UX-UI Design</li>
+          <li>Video Editing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', event => {
+        const href = link.getAttribute('href');
+        if (href && href !== '#' && !href.startsWith('javascript')) {
+          event.preventDefault();
+          const transitionElement = document.getElementById('page-transition');
+          transitionElement.classList.add('active');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 800);
+        }
+      });
+    });
+
+    window.addEventListener('load', () => {
+      const transitionElement = document.getElementById('page-transition');
+      transitionElement.classList.add('slideOut');
+      setTimeout(() => {
+        transitionElement.classList.remove('slideOut');
+      }, 800);
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      AOS.init({
+        duration: 1000,
+        easing: 'ease',
+        once: true
+      });
+    });
+  </script>
+
+</body>
+</html>
